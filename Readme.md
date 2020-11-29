@@ -76,6 +76,7 @@ variable)
 5. Now open browser > Search for "localhost:6543/form"
  ![Front Page](Images/form.PNG)
 6. Make an API call to server using form and check out the Json Response.
+
  ![Json Response](Images/Json.PNG)
 ---
 ### How to report bug?
