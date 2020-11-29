@@ -1,0 +1,73 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Sentiment Analysis API is designed to predict the sentiment on the text given through POST method. The response will be in the form of JSON object which can be easily used in any application.",
+    "version": "1.0.0",
+    "title": "Sentiment Analysis",
+    "contact": {
+      "email": "sameersharma8123@gmail.com"
+    }
+  },
+  "host": "localhost:6543",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "API",
+      "description": "Everything about your sentiment API"
+    }
+  ],
+  "paths": {
+    "/json": {
+      "post": {
+        "tags": [
+          "API"
+        ],
+        "summary": "predict the sentiment",
+        "description": "",
+        "operationId": "swagger",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "text",
+            "in": "formData",
+            "description": "text for prediction",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          },
+          "401": {
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ApiResponse": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "predict": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
